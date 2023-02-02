@@ -6,15 +6,19 @@ use Illuminate\Http\Request;
 
 class CursoController extends Controller
 {
-    public function index() {
-        return "Bienvenido a la página cursos";
+    public function index()
+    {
+        return view('cursos.index');
     }
 
-    public function create() {
-        return "En esta pagina podrás crear un curso";
+    public function create()
+    {
+        return view('cursos.create');
     }
 
-    public function show($curso) {
-        return "Bienvenido al curso: $curso";
+    public function show($curso)
+    {
+        return view('cursos.show', ['curso' => $curso]);
+        // me quede en el min 07:08
     }
 }
