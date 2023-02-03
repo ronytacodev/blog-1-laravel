@@ -18,7 +18,7 @@ class CursoController extends Controller
 
     public function show($curso)
     {
-        return view('cursos.show', ['curso' => $curso]);
-        // me quede en el min 07:08
+        // return view('cursos.show', ['curso' => $curso]);
+        return view('cursos.show', compact('curso'));
     }
 }
