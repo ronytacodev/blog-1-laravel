@@ -46,14 +46,34 @@ class User extends Authenticatable
 
     protected function name(): Attribute
     {
-        return new Attribute(
-            get: function ($value) {
-                return ucwords($value);
-            },
+        // laravel 9
+        // return new Attribute(
+        //     get: function ($value) {
+        //         return ucwords($value);
+        //     },
 
-            set: function ($value) {
-                return strtolower($value);
-            }
+        //     set: function ($value) {
+        //         return strtolower($value);
+        //     }
+        // );
+
+        // usando lo nuevo de PHP 8
+        return new Attribute(
+            get: fn ($value) => ucwords($value),
+
+            set: fn ($value) => strtolower($value)
         );
     }
+
+    // como se escribía los accesores en laravel 7 digamos 
+    // public function getNameAttribute($value)
+    // {
+    //     return ucwords($value);
+    // }
+
+    // como se escribían los mutadores en laravel 7 digamos 
+    // public function setNameAttribute($value)
+    // {
+    //     $this->attributes['name'] = strtolower($value);
+    // }
 }
