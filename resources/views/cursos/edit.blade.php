@@ -16,22 +16,45 @@
         <label>
             Nombre:
             <br>
-            <input type="text" name="name" value="{{$curso->name}}">
+            <input type="text" name="name" value="{{old('name', $curso->name)}}">
         </label>
+        <br>
+
+        @error('name')
+            <br>
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
+
 
         <br>
         <label>
             Descripción:
             <br>
-            <textarea name="description" rows="5">{{$curso->description}}</textarea>
+            <textarea name="description" rows="5">{{old('description', $curso->description)}}</textarea>
         </label>
+
+        @error('description')
+            <br>
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
+
 
         <br>
         <label>
             Categoría:
             <br>
-            <input type="text" name="categoria" value="{{$curso->categoria}}">
+            <input type="text" name="categoria" value="{{old('categoria', $curso->categoria)}}">
         </label>
+        <br>
+
+        @error('categoria')
+            <br>
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
+
         <br>
         <button type="submit">Actualizar formulario</button>
     </form>
