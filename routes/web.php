@@ -15,7 +15,7 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 // Route::controller(CursoController::class)->group(function () {
 //     Route::get('cursos', 'index');
@@ -44,6 +44,8 @@ Route::get('/', HomeController::class);
 
 // Route::resource('asignaturas', CursoController::class)->parameters(['asignaturas' => 'curso'])->names('cursos');
 Route::resource('cursos', CursoController::class);
+
+Route::view('nosotros', 'nosotros')->name('nosotros');
 
 // Route::get('cursos/{curso}/{categoria?}', function ($curso, $categoria= null) {
 
