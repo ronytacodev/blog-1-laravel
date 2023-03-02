@@ -44,6 +44,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // protected $appends = [
+    //     'profile_photo_url',
+    // ];
+
+    // Relation one to one
+    public function profile()
+    {
+        // $profile = Profile::where('user_id', $this->id)->first();
+
+        // return $profile;
+
+        // return $this->hasOne(Profile::class);
+
+        return $this->hasOne('App\Models\Profile');
+    }
+
     protected function name(): Attribute
     {
         // laravel 9
