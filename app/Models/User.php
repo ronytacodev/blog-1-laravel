@@ -71,6 +71,13 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Video');
     }
 
+    // Relation many to many
+    public function roles()
+    {
+        return $this->belongsToMany('App\Models\Rol');
+    }
+
+
     protected function name(): Attribute
     {
         // laravel 9
