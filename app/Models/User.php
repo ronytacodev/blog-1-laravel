@@ -60,6 +60,17 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\Profile');
     }
 
+    // Relation one to many
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post');
+    }
+
+    public function videos()
+    {
+        return $this->hasMany('App\Models\Video');
+    }
+
     protected function name(): Attribute
     {
         // laravel 9
